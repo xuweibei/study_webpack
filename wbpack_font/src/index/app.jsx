@@ -8,7 +8,6 @@ export default class App extends React.Component {
     };
   }
   getList(){
-      alert(123)
     import('./main.jsx').then(res=>{
         console.log(res,'个')
         this.setState({
@@ -19,6 +18,7 @@ export default class App extends React.Component {
 
   render() {
     const { Text } = this.state;
+    
     return (
       <div className="lala">
         {Text ? <Text /> : ""}

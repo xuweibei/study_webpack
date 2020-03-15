@@ -62,3 +62,19 @@ package.js 中"scripts" 中增加 "dev" : "webpack-dev-server --open"    这样�
 
 
 12、cnpm i -D @babel/plugin-syntax-dynamic-import  代码分割动态import 比如，import是有一定得条件才出现的，使用这个就可以将这个分割出来，第一次加载压力就会变小
+
+
+
+
+
+13、terser-webpack-plugin 过滤打包时的文件
+
+    optimization:{
+        minimize:true,
+        minimizer:[
+            new TerserPlugin({
+                include:/\.min\.js/
+            })
+        ]
+    }
+这里表示，打包的时候，只针对文件名有.min的文件进行压缩
