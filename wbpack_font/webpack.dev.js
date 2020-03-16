@@ -51,26 +51,28 @@ const setMore = () => {
     const entryFile = entryFiles[item];
     const match = entryFile.match(/src\/(.*)\/index.js/);
     const pageName = match && match[1];
-    entry[pageName] = entryFile;
-    htmlWebpackPlugin.push(
-      new HtmlWebpackPlugin({
-        title: "my app",
-        template: __dirname + `/src/${pageName}/index.html`,
-        filename:`${pageName}/${pageName}.html`,
-        // chunks:['lele'],//只允许您添加一些块（例如，仅单元测试块）
-        inject: true, //true \|\| 'head' \|\| 'body' \|\| false将所有资产注入给定template或templateContent。
-        //传递时，true或'body'所有javascript资源都将放置在body元素的底部。'head'将脚本放置在head元素中
-        minify: {
-          html5: true, //	根据HTML5规范解析输入
-          collapseWhitespace: true, //折叠有助于文档树中文本节点的空白
-          preserveLineBreaks: false, //标签之间的空格包含换行符时，请务必合拢到1个换行符（永远不要将其完全删除）。
-          //必须与collapseWhitespace=true
-          minifyCSS: true, //缩小样式元素和样式属性中的CSS
-          minifyJS: true, //缩小脚本元素和事件属性中的JavaScript
-          removeComments: false //删除HTML注释
-        }
-      })
-    );
+    if(pageName !== 'server'){
+      entry[pageName] = entryFile;
+      htmlWebpackPlugin.push(
+        new HtmlWebpackPlugin({
+          title: "my app",
+          template: __dirname + `/src/${pageName}/index.html`,
+          filename:`${pageName}/${pageName}.html`,
+          // chunks:['lele'],//只允许您添加一些块（例如，仅单元测试块）
+          inject: true, //true \|\| 'head' \|\| 'body' \|\| false将所有资产注入给定template或templateContent。
+          //传递时，true或'body'所有javascript资源都将放置在body元素的底部。'head'将脚本放置在head元素中
+          minify: {
+            html5: true, //	根据HTML5规范解析输入
+            collapseWhitespace: true, //折叠有助于文档树中文本节点的空白
+            preserveLineBreaks: false, //标签之间的空格包含换行符时，请务必合拢到1个换行符（永远不要将其完全删除）。
+            //必须与collapseWhitespace=true
+            minifyCSS: true, //缩小样式元素和样式属性中的CSS
+            minifyJS: true, //缩小脚本元素和事件属性中的JavaScript
+            removeComments: false //删除HTML注释
+          }
+        })
+      );
+    }
   });
   return {
     entry,
@@ -203,8 +205,7 @@ module.exports = (env = {}) => {
       // historyApiFallback: true,
       // inline: true,
       hot: true
-    },
-    stats:'errors-only'
+    }
     //   watch:true,//开启打包监听
     //   watchOptions:{//只有watch开启时，这里才有意义
     //       ignored:/node_modules/,//排除文件
