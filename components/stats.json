@@ -1,0 +1,310 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.42.0",
+  "hash": "04f6158d20b3888cd2b7",
+  "time": 100,
+  "builtAt": 1584453476325,
+  "publicPath": "",
+  "outputPath": "D:\\我的桌面\\demoMuster\\study_webpack\\components\\dist",
+  "assetsByChunkName": {
+    "large-number": "large-number.js",
+    "large-number-min": "large-number-min.js"
+  },
+  "assets": [
+    {
+      "name": "large-number-min.js",
+      "size": 4487,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "large-number-min"
+      ],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "large-number.js",
+      "size": 4487,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "large-number"
+      ],
+      "info": {},
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "large-number": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "large-number.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "large-number-min": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "large-number-min.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "large-number": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "large-number.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "large-number-min": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "large-number-min.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 637,
+      "names": [
+        "large-number"
+      ],
+      "files": [
+        "large-number.js"
+      ],
+      "hash": "6d0f8ff3640defe4e560",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\我的桌面\\demoMuster\\study_webpack\\components\\src\\index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 0,
+          "size": 637,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "large-number"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "large-number-min"
+            }
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "\r\n\r\n\r\nexport default function num(a,b){\r\n    let i = a.length - 1;\r\n    let j = b.length - 1;\r\n\r\n    let carry = 0;\r\n    let ret = '';\r\n    while(i >=0 || j>=0){\r\n        let x = 0;\r\n        let y = 0;\r\n        let sum = '';\r\n\r\n        if(i>=0){\r\n            x = a[i] - '0';\r\n            i--;\r\n        }\r\n\r\n\r\n        if(j>=0){\r\n            y = b[j] - '0';\r\n            j--;\r\n        }\r\n\r\n        sum = x+y+carry;\r\n        if( sum>=10){\r\n            carry = 1;\r\n            sum -=10;\r\n        }else{\r\n            carry = 0\r\n        }\r\n\r\n        ret = sum +ret;\r\n    }\r\n    if(carry){\r\n        ret = carry + ret\r\n    }\r\n\r\n    return ret\r\n}"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "large-number",
+          "request": "./src/index.js",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 637,
+      "names": [
+        "large-number-min"
+      ],
+      "files": [
+        "large-number-min.js"
+      ],
+      "hash": "215e8adc93f2f7c00ddc",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "D:\\我的桌面\\demoMuster\\study_webpack\\components\\src\\index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 0,
+          "size": 637,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "large-number"
+            },
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "large-number-min"
+            }
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "\r\n\r\n\r\nexport default function num(a,b){\r\n    let i = a.length - 1;\r\n    let j = b.length - 1;\r\n\r\n    let carry = 0;\r\n    let ret = '';\r\n    while(i >=0 || j>=0){\r\n        let x = 0;\r\n        let y = 0;\r\n        let sum = '';\r\n\r\n        if(i>=0){\r\n            x = a[i] - '0';\r\n            i--;\r\n        }\r\n\r\n\r\n        if(j>=0){\r\n            y = b[j] - '0';\r\n            j--;\r\n        }\r\n\r\n        sum = x+y+carry;\r\n        if( sum>=10){\r\n            carry = 1;\r\n            sum -=10;\r\n        }else{\r\n            carry = 0\r\n        }\r\n\r\n        ret = sum +ret;\r\n    }\r\n    if(carry){\r\n        ret = carry + ret\r\n    }\r\n\r\n    return ret\r\n}"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "large-number-min",
+          "request": "./src/index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "D:\\我的桌面\\demoMuster\\study_webpack\\components\\src\\index.js",
+      "name": "./src/index.js",
+      "index": 0,
+      "index2": 0,
+      "size": 637,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0,
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src/index.js",
+          "loc": "large-number"
+        },
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src/index.js",
+          "loc": "large-number-min"
+        }
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "\r\n\r\n\r\nexport default function num(a,b){\r\n    let i = a.length - 1;\r\n    let j = b.length - 1;\r\n\r\n    let carry = 0;\r\n    let ret = '';\r\n    while(i >=0 || j>=0){\r\n        let x = 0;\r\n        let y = 0;\r\n        let sum = '';\r\n\r\n        if(i>=0){\r\n            x = a[i] - '0';\r\n            i--;\r\n        }\r\n\r\n\r\n        if(j>=0){\r\n            y = b[j] - '0';\r\n            j--;\r\n        }\r\n\r\n        sum = x+y+carry;\r\n        if( sum>=10){\r\n            carry = 1;\r\n            sum -=10;\r\n        }else{\r\n            carry = 0\r\n        }\r\n\r\n        ret = sum +ret;\r\n    }\r\n    if(carry){\r\n        ret = carry + ret\r\n    }\r\n\r\n    return ret\r\n}"
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}
