@@ -9,6 +9,9 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); /
 const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 const HtmlWebpackExternalPlugin = require('html-webpack-externals-plugin');
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin');
+
+const smp = new SpeedMeasureWebpackPlugin();
 
 /**
  * 引入配置文件
@@ -213,5 +216,5 @@ module.exports = (env = {}) => {
     //       poll:1000//判断文件是否发生变化时通过不停的询问系统指定的文件有没有变化实现的默认每秒问1000次
     //   }
   };
-  return envObj;
+  return smp.wrap(envObj);
 };

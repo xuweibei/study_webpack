@@ -114,3 +114,51 @@ package.js 中"scripts" 中增加 "dev" : "webpack-dev-server --open"    这样�
 16、stats 构建统计信息
 在package.json里使用 
     "build:stats" :"webpack --json > stats.josn"
+
+
+
+17、speed-measure-webpack-plugin  速度分析插件
+
+    const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin');
+    const smp = new SpeedMeasureWebpackPlugin();
+    smp.wrap()  将输出的对象进行包裹
+
+
+18、webpack-bundel-analyzer 体积分析
+    当做普通的plugin来使用，构建完成后会打开一个端口号为8888的网页来显示打包的体积
+
+
+19、happypack 优化构建时间
+
+    thread-loader 优化构建
+    在js的loader里添加 
+    {
+        loader:'thread-loader',
+        woker:3
+    } 这样就表示开启了3个进程来进行构建
+
+20、new TerserPlugin()并行压缩代码
+
+    optimization:{
+        minimizer:[
+            new TerserPlugin({
+                parallel:true //开启
+            })
+        ]
+    }
+
+21、hard-source-webpack-plugin 开启项目缓存，构建速度更快
+
+
+
+
+22、purgecss-webpack-plugin 去除多余的css;
+
+
+const PATHS = {
+    src: path.join(__dirname,'src')
+}
+
+new PurgecssPlugin({
+    paths:glob.sync(`${PATH.src}/**/*`,{nodir:true})
+})
