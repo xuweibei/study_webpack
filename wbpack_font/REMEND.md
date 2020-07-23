@@ -16,14 +16,14 @@
     npm i --save-dev webpack-server
     在webpack.config.js中增加配置  
     devServer:{
-        contentBase:'/src/index.html',//本地服务器所加载的页面所在的目录
+        contentBase:path.join(__dirname, 'dist'),//本地服务器所加载的页面所在的目录  
         historyApiFallack:true,//不跳转
         inline:true //实时刷新
     }
 package.js 中"scripts" 中增加 "dev" : "webpack-dev-server --open"    这样，终端输入npm run dev就可以启动项目了
 
 6、安装babel  解析es6或者解析.jsx;
-    npm i --save--dev babel-loader @babel/core @babel/preset-env' @babel/preset-react;
+    npm i --save--dev babel-loader@7 babel-core @babel/core  babel/preset-react;
     在webpack.config.js中配置
     module:{
         rules:[
