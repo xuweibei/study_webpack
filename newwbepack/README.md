@@ -59,3 +59,22 @@ filename:'index.html'
 
 9、npx webpack --mode development (看看是否能成功打包)
 10、package.json 的 scripts 里新增 "build":"webpack --mode development"
+
+安装 devServer
+
+1、npm i -D webpack-dev-server
+2、将 webpack-cli 的版本变为@3 的版本，不然会有兼容问题
+3、webpack.config.js 配置
+module.exports = {
+...,
+devServer:{
+contentBase:path.join(\_\_dirname,'./src/'),
+publicPath:'/',
+host:'127.0.0.1',
+port:3000
+}
+}
+4、package.json scripts 配置
+"dev":"webpack-dev-server --open"
+
+5、npm run dev 就可以打开一个本地服务器跑项目了
